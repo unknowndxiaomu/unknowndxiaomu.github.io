@@ -1,0 +1,217 @@
+.hexo-gallery-slider {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: relative;
+  color: #fff;
+  text-shadow: rgba(0,0,0,0.1) 2px 2px 0px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hexo-gallery-slider.initialized {
+  opacity: 1;
+}
+
+.hexo-gallery-slider ul {
+  padding: 0 !important;
+  margin: 0;
+}
+
+.hexo-gallery-slider .slider-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hexo-gallery-slider .slider-wrap ul.slider {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.hexo-gallery-slider .slider-wrap ul.slider li {
+  float: left;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hexo-gallery-slider .slider-wrap ul.slider li > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hexo-gallery-slider .slider-wrap ul.slider img {
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Buttons */
+.hexo-gallery-slider .btns {
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  top: 50%;
+  margin-top: -25px;
+  line-height: 45px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hexo-gallery-slider .btns svg {
+  width: 35px;
+  height: 35px;
+}
+
+.hexo-gallery-slider .btns:hover {
+  background: rgba(0,0,0,0.3);
+}
+
+.hexo-gallery-slider .next {
+  right: -50px;
+  border-radius: 7px 0 0 7px;
+}
+
+.hexo-gallery-slider .previous {
+  left: -50px;
+  border-radius: 0 7px 7px 0;
+}
+
+.hexo-gallery-slider .counter {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  z-index: 1;
+  width: 4em;
+  height: 1.4em;
+  text-align: center;
+  overflow: hidden;
+  height: 29px;
+}
+
+.hexo-gallery-slider .counter .counter-value {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  right: 10px;
+}
+
+.hexo-gallery-slider .counter .counter-value.hidden {
+  display: none;
+}
+
+.hexo-gallery-slider .counter .counter-value.active {
+  display: block;
+}
+
+.hexo-gallery-slider .counter-text {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 5px;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.hexo-gallery-slider .counter-text.next {
+  opacity: 0;
+}
+
+.hexo-gallery-slider .counter-text.current {
+  opacity: 1;
+}
+
+.hexo-gallery-slider .slider-wrap.active .next {
+  right: 0;
+}
+
+.hexo-gallery-slider .slider-wrap.active .previous {
+  left: 0;
+}
+
+/* Pagination */
+.hexo-gallery-slider .pagination-wrap {
+  position: absolute;
+  text-align: center;
+  bottom: 29px;
+  width: 100%;
+}
+
+.hexo-gallery-slider .pagination-wrap ul {
+  width: 100%;
+}
+
+.hexo-gallery-slider .pagination-wrap ul li {
+  margin: 0 5px;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.5;
+  position: relative;
+  cursor: pointer;
+  top: 0;
+  transition: all 0.3s cubic-bezier(1,.01,.32,1);
+}
+
+.hexo-gallery-slider .pagination-wrap ul li.active {
+  width: 11px;
+  height: 11px;
+  top: 2px;
+  opacity: 1;
+  box-shadow: rgba(0,0,0,0.1) 1px 1px 0;
+}
+
+.hexo-gallery-slider .slider-wrap ul {
+  transition: all 0.3s cubic-bezier(1,.01,.32,1);
+}
+
+/* Mobile styles */
+@media screen and (max-width: 479px) {
+  .hexo-gallery-slider .slider-wrap .next {
+    right: 0;
+  }
+  
+  .hexo-gallery-slider .slider-wrap .previous {
+    left: 0;
+  }
+  
+  .hexo-gallery-slider ul li {
+    width: 11px;
+    height: 11px;
+    top: 2px;
+    opacity: 1;
+    box-shadow: rgba(0,0,0,0.1) 1px 1px 0;
+  }
+}
